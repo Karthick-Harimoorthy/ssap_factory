@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SSAP – Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+    <style>
+        :root { --navy:#0a1628; --steel:#1c3557; --teal:#00a99d; --gold:#f0a500; --light:#f4f6f9; --white:#ffffff; }
+        * { scroll-behavior: smooth; }
+        body { font-family:'Source Sans 3',sans-serif; background:var(--white); color:#222; overflow-x:hidden; }
+        h1,h2,h3,h4,.nav-brand-text { font-family:'Oswald',sans-serif; }
+
+        /* NAVBAR */
+        .navbar { background:var(--navy); border-bottom:3px solid var(--teal); padding:0.6rem 1rem; position:sticky; top:0; z-index:1000; }
+        .navbar-brand { display:flex; align-items:center; gap:10px; }
+        .brand-badge { background:var(--teal); color:var(--white); font-family:'Oswald',sans-serif; font-weight:700; font-size:1.1rem; padding:4px 12px; border-radius:4px; letter-spacing:2px; }
+        .nav-brand-text { color:var(--white); font-size:1rem; line-height:1.1; }
+        .nav-brand-sub { color:var(--teal); font-size:0.72rem; letter-spacing:1px; font-family:'Source Sans 3',sans-serif; }
+        .navbar-nav .nav-link { color:rgba(255,255,255,0.82) !important; font-family:'Oswald',sans-serif; font-size:0.95rem; letter-spacing:1px; padding:0.6rem 1rem !important; transition:color 0.2s; }
+        .navbar-nav .nav-link:hover, .navbar-nav .nav-link.active { color:var(--teal) !important; }
+        .navbar-toggler { border-color:var(--teal); }
+        .navbar-toggler-icon { filter:invert(1); }
+
+        /* HERO */
+        .hero-wrap {
+            background:linear-gradient(135deg,var(--navy) 0%,var(--steel) 60%,#0e2a45 100%);
+            min-height:100vh; display:flex; align-items:center; position:relative; overflow:hidden;
+        }
+        .hero-wrap::before {
+            content:''; position:absolute; inset:0;
+            background: repeating-linear-gradient(90deg,rgba(0,169,157,0.04) 0px,transparent 1px,transparent 60px),
+                        repeating-linear-gradient(0deg,rgba(0,169,157,0.04) 0px,transparent 1px,transparent 60px);
+        }
+        .hero-tag { display:inline-block; background:var(--teal); color:#fff; font-size:0.78rem; letter-spacing:3px; padding:4px 14px; font-family:'Oswald',sans-serif; margin-bottom:1rem; }
+        .hero-title { font-family:'Oswald',sans-serif; font-size:clamp(2.2rem,5vw,4rem); font-weight:700; color:var(--white); line-height:1.1; }
+        .hero-title span { color:var(--teal); }
+        .hero-sub { color:rgba(255,255,255,0.7); font-size:1.05rem; max-width:520px; line-height:1.7; }
+        .hero-badge-row { display:flex; gap:1rem; flex-wrap:wrap; margin-top:1.8rem; }
+        .hero-badge { border:1px solid rgba(0,169,157,0.4); background:rgba(0,169,157,0.1); color:var(--teal); padding:6px 16px; font-size:0.82rem; letter-spacing:1px; font-family:'Oswald',sans-serif; }
+        .hero-stats { margin-top:2.5rem; display:flex; gap:2.5rem; flex-wrap:wrap; }
+        .stat-num { font-family:'Oswald',sans-serif; font-size:2.2rem; font-weight:700; color:var(--gold); line-height:1; }
+        .stat-label { font-size:0.78rem; color:rgba(255,255,255,0.55); letter-spacing:1px; }
+
+        /* GEAR VISUAL */
+        .hero-visual { position:relative; display:flex; align-items:center; justify-content:center; }
+        .hero-gear-ring { width:340px; height:340px; border:2px dashed rgba(0,169,157,0.3); border-radius:50%; display:flex; align-items:center; justify-content:center; animation:spin-slow 18s linear infinite; }
+        @keyframes spin-slow { to { transform:rotate(360deg); } }
+        .hero-gear-inner { width:240px; height:240px; border:2px solid rgba(240,165,0,0.25); border-radius:50%; display:flex; align-items:center; justify-content:center; animation:spin-slow 12s linear infinite reverse; }
+        .hero-center-badge { background:var(--navy); border:3px solid var(--teal); border-radius:50%; width:140px; height:140px; display:flex; flex-direction:column; align-items:center; justify-content:center; animation:spin-slow 12s linear infinite; }
+        .hero-center-badge span:first-child { font-family:'Oswald',sans-serif; font-size:2rem; font-weight:700; color:var(--teal); }
+        .hero-center-badge span:last-child { font-size:0.65rem; color:rgba(255,255,255,0.5); letter-spacing:1px; }
+
+        /* BUTTONS */
+        .btn-teal { background:var(--teal); color:#fff; border:none; font-family:'Oswald',sans-serif; letter-spacing:1.5px; padding:12px 30px; font-size:1rem; transition:background 0.2s,transform 0.2s; }
+        .btn-teal:hover { background:#008a80; color:#fff; transform:translateY(-2px); }
+        .btn-outline-teal { border:2px solid var(--teal); color:var(--teal); background:transparent; font-family:'Oswald',sans-serif; letter-spacing:1.5px; padding:10px 28px; font-size:1rem; transition:all 0.2s; }
+        .btn-outline-teal:hover { background:var(--teal); color:#fff; }
+
+        /* WHY SSAP */
+        .why-section { background:var(--light); padding:80px 0; }
+        .section-label { font-size:0.75rem; letter-spacing:3px; color:var(--teal); font-family:'Oswald',sans-serif; margin-bottom:0.4rem; }
+        .section-title { font-family:'Oswald',sans-serif; font-size:clamp(1.6rem,3vw,2.4rem); font-weight:700; color:var(--navy); line-height:1.15; }
+        .section-title span { color:var(--teal); }
+        .divider-teal { width:50px; height:4px; background:var(--teal); margin:1rem 0 1.5rem; }
+        .about-card { background:var(--navy); border-left:4px solid var(--teal); padding:24px 28px; color:#fff; height:100%; }
+        .about-card i { font-size:2rem; color:var(--teal); margin-bottom:0.6rem; }
+        .about-card h5 { font-family:'Oswald',sans-serif; font-size:1.1rem; margin-bottom:0.4rem; }
+        .about-card p { color:rgba(255,255,255,0.7); font-size:0.9rem; margin:0; }
+
+        /* FOOTER */
+        footer { background:#060e1c; color:rgba(255,255,255,0.5); text-align:center; padding:24px; font-size:0.85rem; border-top:3px solid var(--teal); }
+        footer span { color:var(--teal); }
+
+        @media(max-width:768px) {
+            .hero-gear-ring { width:220px; height:220px; }
+            .hero-gear-inner { width:155px; height:155px; }
+            .hero-center-badge { width:90px; height:90px; }
+            .hero-center-badge span:first-child { font-size:1.3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="Home.html">
+                <span class="brand-badge">SSAP</span>
+                <div>
+                    <div class="nav-brand-text">Sai Saran Automotive Products</div>
+                    <div class="nav-brand-sub">CNC Auto Components · Hosur</div>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMain">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="Home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="About.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Product.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Photos.html">Photos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <div class="hero-wrap">
+        <div class="container" style="padding-top:60px; padding-bottom:60px; position:relative; z-index:1;">
+            <div class="row align-items-center g-5 w-100">
+                <div class="col-lg-7">
+                    <div class="hero-tag">PRECISION MACHINING JOB WORk · HOSUR</div>
+                    <h1 class="hero-title">
+                        Sai Saran<br>
+                        <span>Automotive</span><br>
+                        Products
+                    </h1>
+                    <p class="hero-sub mt-3">
+                        Precision Machining Job Work of <strong style="color:#fff;">CNC Auto Components</strong> — gears, shafts, pins, and bushings — serving the automotive and industrial sectors with uncompromising quality since inception.
+                    </p>
+                    <div class="hero-badge-row">
+                        <span class="hero-badge"><i class="bi bi-gear me-1"></i> CNC Machined</span>
+                        <span class="hero-badge"><i class="bi bi-shield-check me-1"></i> Quality Assured</span>
+                        <span class="hero-badge"><i class="bi bi-truck me-1"></i> On-Time Delivery</span>
+                    </div>
+                    <div class="mt-4 d-flex gap-3 flex-wrap">
+                        <button class="btn btn-teal" onclick="window.location.href='Product.html'">Explore Products</button>
+                        <button class="btn btn-outline-teal" onclick="window.location.href='Contact.html'">Contact Us</button>
+                    </div>
+                    <div class="hero-stats">
+                        <div><div class="stat-num">10+</div><div class="stat-label">CNC MACHINES</div></div>
+                        <div><div class="stat-num">20+</div><div class="stat-label">PRODUCT VARIANTS</div></div>
+                        <div><div class="stat-num">100%</div><div class="stat-label">QUALITY CHECKED</div></div>
+                    </div>
+                </div>
+                <div class="col-lg-5 d-flex justify-content-center">
+                    <div class="hero-visual">
+                        <div class="hero-gear-ring">
+                            <div class="hero-gear-inner">
+                                <div class="hero-center-badge">
+                                    <span>SSAP</span>
+                                    <span>EST. HOSUR</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHY SSAP -->
+    <div class="why-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <div class="section-label">WHY CHOOSE US</div>
+                <h2 class="section-title">Built on <span>Precision</span> & Trust</h2>
+                <div class="divider-teal mx-auto"></div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="about-card">
+                        <i class="bi bi-cpu"></i>
+                        <h5>Advanced CNC Machinery</h5>
+                        <p>Multiple CNC turning centres and VMCs running FANUC control systems for high-precision, high-volume output.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="about-card">
+                        <i class="bi bi-patch-check"></i>
+                        <h5>Master Sample Control</h5>
+                        <p>Every product has an approved master sample on the shop floor — operators match every batch to the reference standard.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="about-card">
+                        <i class="bi bi-box-seam"></i>
+                        <h5>Careful Packaging</h5>
+                        <p>Finished components are packed with VCI anti-rust protection ensuring parts arrive in perfect condition.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="about-card">
+                        <i class="bi bi-people"></i>
+                        <h5>Skilled Workforce</h5>
+                        <p>Experienced machinists and quality technicians dedicated to maintaining tight dimensional tolerances every shift.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="about-card">
+                        <i class="bi bi-speedometer2"></i>
+                        <h5>High Volume Production</h5>
+                        <p>Simultaneous multi-machine operations ensure large batch deliveries without compromising accuracy or lead times.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="about-card">
+                        <i class="bi bi-geo-alt"></i>
+                        <h5>Strategically Located</h5>
+                        <p>Located in Hosur's industrial hub — close to major automotive OEMs and Tier-1 suppliers in South India.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <strong style="color:#fff; font-family:'Oswald',sans-serif;">SSAP</strong> — Sai Saran Automotive Products &nbsp;|&nbsp;
+        No. 8/A, New Sidco Industries Estate, Sri Nagar, Hosur – 635 109 &nbsp;|&nbsp;
+        <span>94458 09902</span> &nbsp;/&nbsp; <span>87604 37797</span><br>
+        <small style="opacity:0.4; margin-top:6px; display:block;">© 2025 KH Infotech. All Rights Reserved.</small>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
