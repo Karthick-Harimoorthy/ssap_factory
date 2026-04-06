@@ -123,7 +123,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Home.html" />
+    <Content Include="index.html" />
     <Content Include="Photos.html" />
     <Content Include="Photos\1000115580.jpg" />
     <Content Include="Photos\1000115582.jpg" />
