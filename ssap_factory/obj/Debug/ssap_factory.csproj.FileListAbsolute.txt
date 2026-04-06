@@ -1,3 +1,5 @@
+D:\github\ssap_factory\ssap_factory\obj\Debug\ssap_factory.csproj.AssemblyReference.cache
+D:\github\ssap_factory\ssap_factory\obj\Debug\ssap_factory.csproj.CoreCompileInputs.cache
 D:\github\ssap_factory\ssap_factory\bin\ssap_factory.dll.config
 D:\github\ssap_factory\ssap_factory\bin\ssap_factory.dll
 D:\github\ssap_factory\ssap_factory\bin\ssap_factory.pdb
@@ -66,8 +68,6 @@ D:\github\ssap_factory\ssap_factory\bin\Newtonsoft.Json.xml
 D:\github\ssap_factory\ssap_factory\bin\Antlr3.Runtime.pdb
 D:\github\ssap_factory\ssap_factory\bin\Microsoft.AspNet.FriendlyUrls.xml
 D:\github\ssap_factory\ssap_factory\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\github\ssap_factory\ssap_factory\obj\Debug\ssap_factory.csproj.AssemblyReference.cache
-D:\github\ssap_factory\ssap_factory\obj\Debug\ssap_factory.csproj.CoreCompileInputs.cache
 D:\github\ssap_factory\ssap_factory\obj\Debug\ssap_factory.csproj.CopyComplete
 D:\github\ssap_factory\ssap_factory\obj\Debug\ssap_factory.dll
 D:\github\ssap_factory\ssap_factory\obj\Debug\ssap_factory.pdb
