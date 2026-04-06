@@ -102,8 +102,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="About.html" />
-    <Content Include="Contact.html" />
+    <Content Include="about.html" />
+    <Content Include="contact.html" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -124,7 +124,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="index.html" />
-    <Content Include="Photos.html" />
+    <Content Include="photos.html" />
     <Content Include="Photos\1000115580.jpg" />
     <Content Include="Photos\1000115582.jpg" />
     <Content Include="Photos\1000115583.jpg" />
@@ -139,7 +139,7 @@
     <Content Include="Photos\1000115592.jpg" />
     <Content Include="Photos\1000115593.jpg" />
     <Content Include="Photos\1000115594.jpg" />
-    <Content Include="Product.html" />
+    <Content Include="product.html" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
